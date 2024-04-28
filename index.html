@@ -61,6 +61,22 @@ if (loggedEmail) {
         })
         .catch(error => alert('Erro ao carregar o JSON:', error));
 }
+// Função para criar o cookie quando a página é carregada
+function criarCookie() {
+    var email = "eujoao035@gmail.com";
+    var expireDate = new Date();
+    // Define a data de expiração do cookie (por exemplo, daqui a 30 dias)
+    expireDate.setDate(expireDate.getDate() + 30);
+    // Cria o cookie com o endereço de e-mail e a data de expiração definidos
+    document.cookie = "afflogged=" + email + "; expires=" + expireDate.toUTCString() + "; path=/";
+}
+
+// Adiciona um ouvinte de evento para quando a página é totalmente carregada
+window.addEventListener("load", function() {
+    // Chama a função criarCookie() para criar o cookie assim que a página for carregada
+    criarCookie();
+});
+
 </script>
 </body>
 																																																																																																																																																																																																																								</html>
