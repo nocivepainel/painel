@@ -12,7 +12,7 @@
 <img style="position:absolute;top:7.45in;left:0.1in;width:15.48in;height:3.54in" src="ri_2.png" />
 <img style="position:absolute;top:5.13in;left:0.50in;width:14.54in;height:2.14in" src="ci_2.png" />
 <div style="position:absolute;top:4.13in;left:0.50in;width:3in;line-height:0.78in;"><span style="font-style:normal;font-weight:bold;font-size:43pt;font-family:Roboto;color:#ffffff">Saldo total</span><span style="font-style:normal;font-weight:bold;font-size:43pt;font-family:Roboto;color:#ffffff"> </span><br/></SPAN></div>
-<div style="position:absolute;top:5.85in;left:1.05in;width:5in;line-height:0.60in;"><span id="saldo" style="font-style:normal;font-weight:bold;font-size:43pt;font-family:Roboto;color:#ffffff"></span><span style="font-style:normal;font-weight:bold;font-size:28pt;font-family:Roboto;color:#ffffff"> BRL</span><span style="font-style:normal;font-weight:bold;font-size:28pt;font-family:Roboto;color:#ffffff"> </span><br/></SPAN></div>
+<div style="position:absolute;top:5.85in;left:1.05in;width:5in;line-height:0.60in;"><span id="saldo" style="font-style:normal;font-weight:bold;font-size:43pt;font-family:Roboto;color:#ffffff">23.568,99</span><span style="font-style:normal;font-weight:bold;font-size:28pt;font-family:Roboto;color:#ffffff"> BRL</span><span style="font-style:normal;font-weight:bold;font-size:28pt;font-family:Roboto;color:#ffffff"> </span><br/></SPAN></div>
 <img style="position:absolute;top:15.06in;left:0.52in;width:14.50in;height:0.06in" src="vi_2.png" />
 <img style="position:absolute;top:17.83in;left:0.52in;width:14.50in;height:0.06in" src="vi_3.png" />
 <img style="position:absolute;top:20.60in;left:0.52in;width:14.50in;height:0.06in" src="vi_4.png" />
@@ -34,50 +34,8 @@
 <img style="position:fixed;bottom:0;left:3.69in;width:1.93in;height:1.93in" onclick="window.location.href = '/painel/wallet/';" src="ri_11.png" />
 <img style="position:fixed;bottom:0;left:6.73in;width:1.96in;height:1.96in" src="ri_12.png" />
 <img style="position:fixed;bottom:0;left:9.47in;width:2.90in;height:2.5in" src="ri_13.png" />
-<img style="position:fixed;bottom:0.0in;left:12.89in;width:1.88in;height:1.88in" src="ri_14.png" />
-<script>
-// Função para obter o valor de um cookie pelo seu nome
-function getCookie(name) {
-    var value = "; " + document.cookie;
-    var parts = value.split("; " + name + "=");
-    if (parts.length == 2) return parts.pop().split(";").shift();
-}
-
-// Obtém o e-mail do cookie
-var loggedEmail = getCookie("afflogged");
-
-// Se o e-mail estiver definido
-if (loggedEmail) {
-    // Carrega o JSON
-    fetch('infos.json')
-        .then(response => response.json())
-        .then(data => {
-            // Procura pelo e-mail do usuário no JSON
-            var userData = data.find(user => user.afiliado === loggedEmail);
-            // Se encontrar o usuário
-            if (userData) {
-                document.getElementById('saldo').innerHTML = userData.saldo + ",00";
-            }
-        })
-        .catch(error => alert('Erro ao carregar o JSON:', error));
-}
-// Função para criar o cookie quando a página é carregada
-function criarCookie() {
-    var email = "eujoao035@gmail.com";
-    var expireDate = new Date();
-    // Define a data de expiração do cookie (por exemplo, daqui a 30 dias)
-    expireDate.setDate(expireDate.getDate() + 30);
-    // Cria o cookie com o endereço de e-mail e a data de expiração definidos
-    document.cookie = "afflogged=" + email + "; expires=" + expireDate.toUTCString() + "; path=/";
-}
-
-// Adiciona um ouvinte de evento para quando a página é totalmente carregada
-window.addEventListener("load", function() {
-    // Chama a função criarCookie() para criar o cookie assim que a página for carregada
-    criarCookie();
-});
-
-</script>
+<img style="position:fixed;bottom:0.0in;left:12.89in;width:1.88in;height:1.88in" src="ri_14.png" /> 
 </body>
 																																																																																																																																																																																																																								</html>
-																											
+
+			   
